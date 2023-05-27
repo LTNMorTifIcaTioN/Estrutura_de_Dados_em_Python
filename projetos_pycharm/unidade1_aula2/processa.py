@@ -32,3 +32,10 @@ print()
 le.ListaEncadeada.remove(lista,"cenoura")
 print(lista)
 # espinafre => desodorante => biscoito => abacate => None
+
+lista = le.ListaEncadeada()
+
+for i in range(8):
+    le.ListaEncadeada.insere(lista, i)
+
+print("Lista:", lista)

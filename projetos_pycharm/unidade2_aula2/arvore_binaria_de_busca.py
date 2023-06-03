@@ -1,6 +1,6 @@
 class Vertice:
     """
-    Vertice de Arvore Binária de Busca
+    Vértice de Árvore Binária de Busca
     """
 
     def __init__(self, chave, pai=None):
@@ -109,7 +109,7 @@ class Vertice:
 
     def _remover_pai_de_um_filho(self):
         """
-        Remove o vértice que tem um filho seja à direita ou à esquerda
+        Remove o vértice quê tem um filho seja à direita ou à esquerda
         :return: vértice removido
         """
         print("Remover PAI de 1 filho. Sou pai de 1 filho")
@@ -149,7 +149,7 @@ class Vertice:
 
     def _remover_pai_de_dois_filhos(self):
         """
-        Remove o vértice que tem 2 filhos
+        Remove o vértice quê tem 2 filhos
         :return: vértice removido
         """
         print("Remover PAI de 2 filhos. Sou pai de 2 filhos")
@@ -201,7 +201,7 @@ class Vertice:
 
     def imprimir_percurso_pre_ordem(self):
         """
-        Percorre a árvore em pré ordem (vértice, esquerda, direita)
+        Percorre a árvore em pré-ordem (vértice, esquerda, direita)
         e imprime a chave do vértice
         :return: None
         """
@@ -216,7 +216,7 @@ class Vertice:
 
     def imprimir_percurso_pos_ordem(self):
         """
-        Percorre a árvore em pré ordem (esquerda, direita, vértice)
+        Percorre a árvore em pré-ordem (esquerda, direita, vértice)
         e imprime a chave do vértice
         :return: None
         """

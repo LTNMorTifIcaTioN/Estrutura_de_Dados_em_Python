@@ -61,7 +61,7 @@ class Grafo:
     def imprimir(self):
         total = 0
         for u, v, custo in self.arestas():
-            print("({}, {}, {})".format(u, v, custo), end='')
+            print("({}, {}, {})".format(u, v, custo), end=' ')
             total += custo
         if not self.orientado:
             # divide por 2 para descontar a duplicidade
@@ -74,7 +74,7 @@ def dijkstra(grafo, fonte):
     VAZIO = None
     INFINITO = sum([aresta[-1] for aresta in grafo.arestas()])
     antecessor_e_distancia = {}
-    fila = {}
+    fila = []
 
     # inicia antecessor_e_custo de todos os vértices
     # com o valor (VAZIO, INFINITO)
@@ -106,7 +106,6 @@ def dijkstra(grafo, fonte):
 
     return antecessor_e_distancia
 
-
 def caminho(antecessor_e_distancia, fonte, destino):
     rota = [destino]
     distancia = antecessor_e_distancia[destino][1]
@@ -118,6 +117,7 @@ def caminho(antecessor_e_distancia, fonte, destino):
         destino = antecessor
     return "->".join(rota) + " distância: {}".format(distancia)
 
+
 # INICIO DO PROGRAMA
 print( """
 Este programa apresenta o custo mínimo para ir
@@ -125,19 +125,17 @@ de um ponto A a todos os demais usando o algorítmo de
 Dijkstra.
 """)
 arestas = [
-    ('A', 'B', 3),
-    ('A', 'X', 2),
-    ('A', 'H', 5),
-    ('B', 'C', 4),
-    ('B', 'X', 3),
+    ('A', 'B', 1),
+    ('A', 'C', 2),
+    ('B', 'C', 2),
+    ('B', 'D', 5),
     ('B', 'E', 3),
-    ('C', 'H', 3),
-    ('C', 'E', 3),
     ('C', 'D', 2),
-    ('D', 'G', 3),
-    ('D', 'F', 4),
-    ('E', 'F', 5),
-    ('G', 'H', 5),
+    ('C', 'E', 10),
+    ('C', 'D', 2),
+    ('D', 'E', 13),
+    ('D', 'Z', 15),
+    ('E', 'Z', 1),
 ]
 # cria um objeto Grafo
 grafo = Grafo()
@@ -152,4 +150,4 @@ for u, ant_e_dist in antecessor_e_distancia.items():
     print("De A para {}, distância={}".format(
         u, ant_e_dist[1]
     ))
-    print("Caminho {}".format(caminho(antecessor_e_distancia, u, "A")))
+    print("Caminho {}".format(caminho(antecessor_e_distancia, "A", u)))

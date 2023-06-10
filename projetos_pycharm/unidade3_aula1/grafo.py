@@ -1,7 +1,7 @@
-#
-#
-#
-#
+"""
+Grafo
+"""
+
 class Vertice:
     """Vértice do Grafo"""
 
@@ -13,17 +13,17 @@ class Vertice:
         # valorado ou não
         self._valorado = valorado
 
-    #
-    #
-    #
-    #
-    #
-    #
-    #
+    def inserir_adjacente(self, id_vizinho, custo):
+        """Insere adjacente"""
+        if self._valorado is False:
+            custo = 1
+        self._vizinhos[id_vizinho] = custo
+
     @property
     def ids_dos_adjacentes(self):
         """Obtém os ID dos adjacentes"""
         return self._vizinhos.keys()
+
     def obter_custo(self, id_vizinho):
         """Obtém o custo de um adjacente cujo ID é 'ide_vizinho'"""
         if self._valorado:
